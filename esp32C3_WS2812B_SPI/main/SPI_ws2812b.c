@@ -21,7 +21,7 @@ void initSPI(void){
         .command_bits = 0,
         .address_bits =0,
         .dummy_bits = 0,
-        .clock_speed_hz = 5700000, //5500000,5700000
+        .clock_speed_hz = 6400000, //5500000,5700000
         .duty_cycle_pos = 128,
         .mode = 0,
         .spics_io_num = -1,
@@ -29,7 +29,7 @@ void initSPI(void){
    };
     ret = spi_bus_add_device(SPI2_HOST, &devivecfg, &spi);
     int khz;
-    khz = spi_get_actual_clock(APB_CLK_FREQ, 5700000, 128);
+    khz = spi_get_actual_clock(APB_CLK_FREQ, 600000, 128);
     ESP_ERROR_CHECK(ret);
     ESP_LOGI(TAG, "spi_get_actual_clock %d", khz);
     ESP_LOGI(TAG, "Complete Inittializing SPI");
@@ -114,9 +114,9 @@ void Test(void){
 }
 
 void sendDataReset(void){
-    uint8_t reset[60] = {0};
+    uint8_t reset[8*24] = {0};
     memset(&t,0,sizeof(t));
-    t.length = 8*60;
+    t.length = 8*24;
     t.tx_buffer = reset;
     spi_device_transmit(spi, &t);
 }

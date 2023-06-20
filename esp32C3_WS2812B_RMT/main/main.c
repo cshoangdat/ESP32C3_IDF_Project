@@ -11,7 +11,7 @@ static const char *TAG = "LED RGB";
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
    or you can edit the following line and set a number here.
 */
-#define BLINK_GPIO GPIO_NUM_8
+#define BLINK_GPIO GPIO_NUM_10
 
 static led_strip_t *pStrip_a;
 

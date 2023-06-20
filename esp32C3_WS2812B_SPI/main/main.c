@@ -5,8 +5,8 @@
 
 void app_main(void)
 {
-    gpio_set_direction(MOSI_PIN, GPIO_MODE_OUTPUT);
-    gpio_set_pull_mode(MOSI_PIN, GPIO_PULLDOWN_ONLY);
+    // gpio_set_direction(MOSI_PIN, GPIO_MODE_OUTPUT);
+    // gpio_set_pull_mode(MOSI_PIN, GPIO_PULLDOWN_ONLY);
     initSPI();
     vTaskDelay(1000/portTICK_PERIOD_MS);
     while(1){
@@ -19,6 +19,6 @@ void app_main(void)
     }
     // ws2812b_pixel(255,0,0);
     // vTaskDelay(1000);
-    // // Test();1
+    // Test();
     // ESP_LOGI(TAG, "Complete Transmits");
 }

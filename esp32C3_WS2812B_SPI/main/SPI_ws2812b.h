@@ -8,10 +8,10 @@
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#define MOSI_PIN GPIO_NUM_8
+#define MOSI_PIN GPIO_NUM_10
 #define TAG "SPI"
-#define bit_zero 0xC0//0xC0 
-#define bit_one 0xFC //0xF8 0xFC
+#define bit_zero 0xC0//0xC0 0x80
+#define bit_one 0xF8 //0xF8 0xFC
 
 void initSPI(void);
 void sendData_8bit(uint8_t data);
